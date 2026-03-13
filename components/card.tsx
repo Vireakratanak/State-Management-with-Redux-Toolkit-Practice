@@ -1,15 +1,22 @@
 "use client"
-import { useAppSelector } from "@/lip/hooks"
+
+import { increment } from "@/lib/features/counter/counterSlice"
+import { useAppSelector, useAppDispatch } from "@/lib/hooks"
+
 export default function Card(){
+
     // Get global state
     const count = useAppSelector((state) => state.counter.value)
 
-    // despatch action
+    // dispatch action
     const dispatch = useAppDispatch()
+
     return(
         <section> 
-            <p> Calling global state</p>\
-            <button onClick={() => dispatch(increment())}> Increase Button</button>
+            <p>Calling global state: {count}</p>
+            <button onClick={() => dispatch(increment(1))}>
+                Increase Button
+            </button>
         </section>
     )
 }

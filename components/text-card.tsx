@@ -1,12 +1,19 @@
 "use client"
-import { useAppSelector } from "@/lip/hooks"
-export default function TextCard(){
+
+import { increment } from "@/lib/features/counter/counterSlice"
+import { useAppSelector, useAppDispatch } from "@/lib/hooks"
+
+export default function Card(){
+
     // Get global state
     const count = useAppSelector((state) => state.counter.value)
+
+    // dispatch action
+    const dispatch = useAppDispatch()
+
     return(
         <section> 
-            <p> In another Card: global state
-            </p>
+            <p>In another global state: {count}</p>
         </section>
     )
 }

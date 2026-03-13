@@ -1,3 +1,4 @@
+import { createSlice } from "@reduxjs/toolkit"
 // Define Type or Interface
 export interface CounterState {
     value: number;
@@ -21,6 +22,6 @@ export const counterSlice = createSlice({
     }
 })
 // export action of reducer
-export const {increment, decrement} = counterSlice.action
+export const {increment, decrement} = counterSlice.actions
 // 3. Export reducer
 export default counterSlice.reducer

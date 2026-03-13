@@ -1,13 +1,14 @@
 import Card from "@/components/card";
+import TextCard from "@/components/text-card"; // add this
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-     <main>
-      <Card />
-      <TextCard />
-     </main>
+      <main>
+        <Card />
+        <TextCard />
+      </main>
     </div>
   );
 }
